@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Outfit", system-ui, -apple-system, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.magic-card {
+  background: rgba(24, 13, 52, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+}
+
+.magic-glow {
+  box-shadow: 0 0 48px -12px rgba(192, 38, 211, 0.45);
+}
+
+.neon-button {
+  background: linear-gradient(135deg, #9333ea 0%, #c026d3 55%, #ec4899 100%);
+  box-shadow: 0 10px 30px -8px rgba(192, 38, 211, 0.65);
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.16s ease, filter 0.16s ease;
+}
+
+.neon-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 14px 36px -8px rgba(217, 70, 239, 0.8);
+}
+
+.neon-button:active:not(:disabled) {
+  transform: translateY(0px) scale(0.98);
+}
+
+@keyframes floatOrb {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.animate-float-orb {
+  animation: floatOrb 4.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-orb {
+    animation: none;
+  }
+}

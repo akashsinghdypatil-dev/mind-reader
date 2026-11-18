@@ -1,0 +1,6 @@
+{
+  "name": "MIND READER AI",
+  "description": "Think It. Hide It. I'll Guess It. An interactive AI mind-reading experiment featuring MIRA, your voice AI mind reader, number, colour, and object prediction games, memory tests, and cinematic shock reveals.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
